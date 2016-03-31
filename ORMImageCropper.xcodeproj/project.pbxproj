@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CE1AFC5E1CAD1BC700FEC9F4 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1AFC5D1CAD1BC700FEC9F4 /* AlertViewController.m */; };
 		CE265EE51CACAA6D0014D4B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265EE41CACAA6D0014D4B9 /* main.m */; };
 		CE265EE81CACAA6D0014D4B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265EE71CACAA6D0014D4B9 /* AppDelegate.m */; };
 		CE265EEB1CACAA6D0014D4B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265EEA1CACAA6D0014D4B9 /* ViewController.m */; };
@@ -15,6 +16,9 @@
 		CE265EF31CACAA6D0014D4B9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE265EF11CACAA6D0014D4B9 /* LaunchScreen.storyboard */; };
 		CE265EFE1CACAA6D0014D4B9 /* ORMImageCropperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265EFD1CACAA6D0014D4B9 /* ORMImageCropperTests.m */; };
 		CE265F091CACAA6D0014D4B9 /* ORMImageCropperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265F081CACAA6D0014D4B9 /* ORMImageCropperUITests.m */; };
+		CE265F191CACAB0F0014D4B9 /* ORMImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265F181CACAB0F0014D4B9 /* ORMImageCropper.m */; };
+		CE7410911CAD867D0008185C /* ORMPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74108F1CAD867D0008185C /* ORMPickerViewController.m */; };
+		CE7410921CAD867D0008185C /* ORMPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7410901CAD867D0008185C /* ORMPickerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CE1AFC5C1CAD1BC700FEC9F4 /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
+		CE1AFC5D1CAD1BC700FEC9F4 /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
 		CE265EE01CACAA6D0014D4B9 /* ORMImageCropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORMImageCropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE265EE41CACAA6D0014D4B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE265EE61CACAA6D0014D4B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +57,11 @@
 		CE265F041CACAA6D0014D4B9 /* ORMImageCropperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORMImageCropperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE265F081CACAA6D0014D4B9 /* ORMImageCropperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORMImageCropperUITests.m; sourceTree = "<group>"; };
 		CE265F0A1CACAA6D0014D4B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CE265F171CACAB0F0014D4B9 /* ORMImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMImageCropper.h; sourceTree = "<group>"; };
+		CE265F181CACAB0F0014D4B9 /* ORMImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMImageCropper.m; sourceTree = "<group>"; };
+		CE74108E1CAD867D0008185C /* ORMPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMPickerViewController.h; sourceTree = "<group>"; };
+		CE74108F1CAD867D0008185C /* ORMPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMPickerViewController.m; sourceTree = "<group>"; };
+		CE7410901CAD867D0008185C /* ORMPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ORMPickerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +89,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE1AFC5B1CAD1BC700FEC9F4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CE1AFC5C1CAD1BC700FEC9F4 /* AlertViewController.h */,
+				CE1AFC5D1CAD1BC700FEC9F4 /* AlertViewController.m */,
+				CE74108E1CAD867D0008185C /* ORMPickerViewController.h */,
+				CE74108F1CAD867D0008185C /* ORMPickerViewController.m */,
+				CE7410901CAD867D0008185C /* ORMPickerViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		CE265ED71CACAA6D0014D4B9 = {
 			isa = PBXGroup;
 			children = (
@@ -101,6 +124,7 @@
 		CE265EE21CACAA6D0014D4B9 /* ORMImageCropper */ = {
 			isa = PBXGroup;
 			children = (
+				CE265F161CACAAED0014D4B9 /* ORMImageCropper */,
 				CE265EE61CACAA6D0014D4B9 /* AppDelegate.h */,
 				CE265EE71CACAA6D0014D4B9 /* AppDelegate.m */,
 				CE265EE91CACAA6D0014D4B9 /* ViewController.h */,
@@ -138,6 +162,16 @@
 				CE265F0A1CACAA6D0014D4B9 /* Info.plist */,
 			);
 			path = ORMImageCropperUITests;
+			sourceTree = "<group>";
+		};
+		CE265F161CACAAED0014D4B9 /* ORMImageCropper */ = {
+			isa = PBXGroup;
+			children = (
+				CE265F171CACAB0F0014D4B9 /* ORMImageCropper.h */,
+				CE265F181CACAB0F0014D4B9 /* ORMImageCropper.m */,
+				CE1AFC5B1CAD1BC700FEC9F4 /* View */,
+			);
+			path = ORMImageCropper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -246,6 +280,7 @@
 				CE265EF31CACAA6D0014D4B9 /* LaunchScreen.storyboard in Resources */,
 				CE265EF01CACAA6D0014D4B9 /* Assets.xcassets in Resources */,
 				CE265EEE1CACAA6D0014D4B9 /* Main.storyboard in Resources */,
+				CE7410921CAD867D0008185C /* ORMPickerViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,9 +305,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE265F191CACAB0F0014D4B9 /* ORMImageCropper.m in Sources */,
 				CE265EEB1CACAA6D0014D4B9 /* ViewController.m in Sources */,
 				CE265EE81CACAA6D0014D4B9 /* AppDelegate.m in Sources */,
+				CE7410911CAD867D0008185C /* ORMPickerViewController.m in Sources */,
 				CE265EE51CACAA6D0014D4B9 /* main.m in Sources */,
+				CE1AFC5E1CAD1BC700FEC9F4 /* AlertViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +450,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ORMImageCropper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mredrock.ORMImageCropper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +462,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ORMImageCropper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.mredrock.ORMImageCropper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -496,6 +536,7 @@
 				CE265F0F1CACAA6D0014D4B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE265F101CACAA6D0014D4B9 /* Build configuration list for PBXNativeTarget "ORMImageCropperTests" */ = {
 			isa = XCConfigurationList;
@@ -504,6 +545,7 @@
 				CE265F121CACAA6D0014D4B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CE265F131CACAA6D0014D4B9 /* Build configuration list for PBXNativeTarget "ORMImageCropperUITests" */ = {
 			isa = XCConfigurationList;
@@ -512,6 +554,7 @@
 				CE265F151CACAA6D0014D4B9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
