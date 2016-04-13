@@ -7,7 +7,7 @@
 //
 
 #import "ORMImageCropper.h"
-
+#import "ORMOverflowViewController.h"
 
 
 @interface ORMImageCropper()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
@@ -63,6 +63,8 @@
                                          style:UIAlertActionStyleDefault
                                          handler:^(UIAlertAction *action) {
                                              NSLog(@"互联网图库");
+                                             ORMOverflowViewController *overflowVC = [[ORMOverflowViewController alloc] initWithNibName:@"ORMOverflowViewController" bundle:nil];
+                                             [self.delegate presentViewController:overflowVC animated:YES completion:nil];
                                          }];
         UIAlertAction *captureAction = [UIAlertAction
                                         actionWithTitle:@"摄像头拍照"

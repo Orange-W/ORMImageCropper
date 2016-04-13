@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "AlertViewController.h"
 
+
 typedef void (^completeBlock)(UIImage *_Nonnull cropperImage);
 
 @interface ORMImageCropper : NSObject
@@ -29,8 +30,6 @@ typedef void (^completeBlock)(UIImage *_Nonnull cropperImage);
 + (nonnull instancetype)imageCropperWithTittle:(nullable NSString *)title
                                message:(nullable NSString *)message;
 
-- (void)show;
-
 /**
  *  @author Orange-W, 16-03-31 10:03:26
  *
@@ -40,6 +39,6 @@ typedef void (^completeBlock)(UIImage *_Nonnull cropperImage);
  */
 - (void)setDetegate:(nonnull id) delegate
       compelteBlock:(nullable completeBlock)  completeBlock;
-
-
+/**弹出选项*/
+- (void)show;
 @end

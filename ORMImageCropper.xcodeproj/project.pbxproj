@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		CE1AFC5E1CAD1BC700FEC9F4 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1AFC5D1CAD1BC700FEC9F4 /* AlertViewController.m */; };
+		CE1D242C1CBBCFAB003565A4 /* ORMRequestImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE1D242B1CBBCFAB003565A4 /* ORMRequestImageModel.m */; };
 		CE265EE51CACAA6D0014D4B9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265EE41CACAA6D0014D4B9 /* main.m */; };
 		CE265EE81CACAA6D0014D4B9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265EE71CACAA6D0014D4B9 /* AppDelegate.m */; };
 		CE265EEB1CACAA6D0014D4B9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265EEA1CACAA6D0014D4B9 /* ViewController.m */; };
@@ -17,8 +18,12 @@
 		CE265EFE1CACAA6D0014D4B9 /* ORMImageCropperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265EFD1CACAA6D0014D4B9 /* ORMImageCropperTests.m */; };
 		CE265F091CACAA6D0014D4B9 /* ORMImageCropperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265F081CACAA6D0014D4B9 /* ORMImageCropperUITests.m */; };
 		CE265F191CACAB0F0014D4B9 /* ORMImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265F181CACAB0F0014D4B9 /* ORMImageCropper.m */; };
-		CE7410911CAD867D0008185C /* ORMPickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE74108F1CAD867D0008185C /* ORMPickerViewController.m */; };
-		CE7410921CAD867D0008185C /* ORMPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE7410901CAD867D0008185C /* ORMPickerViewController.xib */; };
+		CE2C30E01CB2639E00BDF512 /* ORMImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2C30DF1CB2639E00BDF512 /* ORMImageModel.m */; };
+		CE4BB2211CB25E280094553C /* ORMImageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BB2201CB25E280094553C /* ORMImageDataModel.m */; };
+		CE6D62A41CAF985600819EDB /* ORMOverflowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D62A21CAF985600819EDB /* ORMOverflowViewController.m */; };
+		CE6D62A51CAF985600819EDB /* ORMOverflowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6D62A31CAF985600819EDB /* ORMOverflowViewController.xib */; };
+		CE6D62A71CAFD35000819EDB /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE6D62A61CAFD35000819EDB /* default.jpg */; };
+		CE9EE0021CB16F440039AC3F /* ORMImageRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE0011CB16F440039AC3F /* ORMImageRequestModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +46,8 @@
 /* Begin PBXFileReference section */
 		CE1AFC5C1CAD1BC700FEC9F4 /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
 		CE1AFC5D1CAD1BC700FEC9F4 /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
+		CE1D242A1CBBCFAB003565A4 /* ORMRequestImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMRequestImageModel.h; sourceTree = "<group>"; };
+		CE1D242B1CBBCFAB003565A4 /* ORMRequestImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMRequestImageModel.m; sourceTree = "<group>"; };
 		CE265EE01CACAA6D0014D4B9 /* ORMImageCropper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ORMImageCropper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE265EE41CACAA6D0014D4B9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CE265EE61CACAA6D0014D4B9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -59,9 +66,16 @@
 		CE265F0A1CACAA6D0014D4B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE265F171CACAB0F0014D4B9 /* ORMImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMImageCropper.h; sourceTree = "<group>"; };
 		CE265F181CACAB0F0014D4B9 /* ORMImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMImageCropper.m; sourceTree = "<group>"; };
-		CE74108E1CAD867D0008185C /* ORMPickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMPickerViewController.h; sourceTree = "<group>"; };
-		CE74108F1CAD867D0008185C /* ORMPickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMPickerViewController.m; sourceTree = "<group>"; };
-		CE7410901CAD867D0008185C /* ORMPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ORMPickerViewController.xib; sourceTree = "<group>"; };
+		CE2C30DF1CB2639E00BDF512 /* ORMImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMImageModel.m; sourceTree = "<group>"; };
+		CE4BB21A1CB255870094553C /* ORMImageDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMImageDataModel.h; sourceTree = "<group>"; };
+		CE4BB21D1CB25CCB0094553C /* ORMImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMImageModel.h; sourceTree = "<group>"; };
+		CE4BB2201CB25E280094553C /* ORMImageDataModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMImageDataModel.m; sourceTree = "<group>"; };
+		CE6D62A11CAF985600819EDB /* ORMOverflowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMOverflowViewController.h; sourceTree = "<group>"; };
+		CE6D62A21CAF985600819EDB /* ORMOverflowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMOverflowViewController.m; sourceTree = "<group>"; };
+		CE6D62A31CAF985600819EDB /* ORMOverflowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ORMOverflowViewController.xib; sourceTree = "<group>"; };
+		CE6D62A61CAFD35000819EDB /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
+		CE9EE0001CB16F440039AC3F /* ORMImageRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMImageRequestModel.h; sourceTree = "<group>"; };
+		CE9EE0011CB16F440039AC3F /* ORMImageRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMImageRequestModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,15 +103,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		CE1AFC5B1CAD1BC700FEC9F4 /* View */ = {
+		CE1AFC5B1CAD1BC700FEC9F4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE6D62A61CAFD35000819EDB /* default.jpg */,
 				CE1AFC5C1CAD1BC700FEC9F4 /* AlertViewController.h */,
 				CE1AFC5D1CAD1BC700FEC9F4 /* AlertViewController.m */,
-				CE74108E1CAD867D0008185C /* ORMPickerViewController.h */,
-				CE74108F1CAD867D0008185C /* ORMPickerViewController.m */,
-				CE7410901CAD867D0008185C /* ORMPickerViewController.xib */,
+				CE6D62A11CAF985600819EDB /* ORMOverflowViewController.h */,
+				CE6D62A21CAF985600819EDB /* ORMOverflowViewController.m */,
+				CE6D62A31CAF985600819EDB /* ORMOverflowViewController.xib */,
 			);
+			name = ViewController;
 			path = View;
 			sourceTree = "<group>";
 		};
@@ -169,9 +185,25 @@
 			children = (
 				CE265F171CACAB0F0014D4B9 /* ORMImageCropper.h */,
 				CE265F181CACAB0F0014D4B9 /* ORMImageCropper.m */,
-				CE1AFC5B1CAD1BC700FEC9F4 /* View */,
+				CE6D629D1CAF980A00819EDB /* Model */,
+				CE1AFC5B1CAD1BC700FEC9F4 /* ViewController */,
 			);
 			path = ORMImageCropper;
+			sourceTree = "<group>";
+		};
+		CE6D629D1CAF980A00819EDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE9EE0001CB16F440039AC3F /* ORMImageRequestModel.h */,
+				CE9EE0011CB16F440039AC3F /* ORMImageRequestModel.m */,
+				CE4BB21A1CB255870094553C /* ORMImageDataModel.h */,
+				CE4BB2201CB25E280094553C /* ORMImageDataModel.m */,
+				CE4BB21D1CB25CCB0094553C /* ORMImageModel.h */,
+				CE2C30DF1CB2639E00BDF512 /* ORMImageModel.m */,
+				CE1D242A1CBBCFAB003565A4 /* ORMRequestImageModel.h */,
+				CE1D242B1CBBCFAB003565A4 /* ORMRequestImageModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +273,7 @@
 				TargetAttributes = {
 					CE265EDF1CACAA6D0014D4B9 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = FYYE36HAH8;
 					};
 					CE265EF81CACAA6D0014D4B9 = {
 						CreatedOnToolsVersion = 7.2;
@@ -280,7 +313,8 @@
 				CE265EF31CACAA6D0014D4B9 /* LaunchScreen.storyboard in Resources */,
 				CE265EF01CACAA6D0014D4B9 /* Assets.xcassets in Resources */,
 				CE265EEE1CACAA6D0014D4B9 /* Main.storyboard in Resources */,
-				CE7410921CAD867D0008185C /* ORMPickerViewController.xib in Resources */,
+				CE6D62A51CAF985600819EDB /* ORMOverflowViewController.xib in Resources */,
+				CE6D62A71CAFD35000819EDB /* default.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,12 +339,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE1D242C1CBBCFAB003565A4 /* ORMRequestImageModel.m in Sources */,
 				CE265F191CACAB0F0014D4B9 /* ORMImageCropper.m in Sources */,
 				CE265EEB1CACAA6D0014D4B9 /* ViewController.m in Sources */,
+				CE4BB2211CB25E280094553C /* ORMImageDataModel.m in Sources */,
+				CE2C30E01CB2639E00BDF512 /* ORMImageModel.m in Sources */,
 				CE265EE81CACAA6D0014D4B9 /* AppDelegate.m in Sources */,
-				CE7410911CAD867D0008185C /* ORMPickerViewController.m in Sources */,
 				CE265EE51CACAA6D0014D4B9 /* main.m in Sources */,
 				CE1AFC5E1CAD1BC700FEC9F4 /* AlertViewController.m in Sources */,
+				CE9EE0021CB16F440039AC3F /* ORMImageRequestModel.m in Sources */,
+				CE6D62A41CAF985600819EDB /* ORMOverflowViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,6 +487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ORMImageCropper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -461,6 +500,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ORMImageCropper/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
