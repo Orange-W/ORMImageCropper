@@ -20,9 +20,6 @@ typedef void (^completeBlock)(UIImage *_Nonnull cropperImage);
 @property (copy, nonatomic, nullable) NSString *actionSheetTitle;
 @property (copy, nonatomic, nullable) NSString *actionSheetMessage;
 
-@property (strong, nonatomic, nonnull)  UIView  *overflowView;//蒙板
-@property (strong, nonatomic, nonnull)  UIView  *imageCutView;//剪切基本框
-
 /* 方法  */
 /** 快速创建 */
 + (nonnull instancetype)imageCropperInstance;
