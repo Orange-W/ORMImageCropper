@@ -18,11 +18,11 @@
 		CE265EFE1CACAA6D0014D4B9 /* ORMImageCropperTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265EFD1CACAA6D0014D4B9 /* ORMImageCropperTests.m */; };
 		CE265F091CACAA6D0014D4B9 /* ORMImageCropperUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265F081CACAA6D0014D4B9 /* ORMImageCropperUITests.m */; };
 		CE265F191CACAB0F0014D4B9 /* ORMImageCropper.m in Sources */ = {isa = PBXBuildFile; fileRef = CE265F181CACAB0F0014D4B9 /* ORMImageCropper.m */; };
+		CE26FE571CBED3B1007401DC /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE26FE561CBED3B1007401DC /* default.jpg */; };
 		CE2C30E01CB2639E00BDF512 /* ORMImageModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE2C30DF1CB2639E00BDF512 /* ORMImageModel.m */; };
 		CE4BB2211CB25E280094553C /* ORMImageDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE4BB2201CB25E280094553C /* ORMImageDataModel.m */; };
 		CE6D62A41CAF985600819EDB /* ORMOverflowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CE6D62A21CAF985600819EDB /* ORMOverflowViewController.m */; };
 		CE6D62A51CAF985600819EDB /* ORMOverflowViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6D62A31CAF985600819EDB /* ORMOverflowViewController.xib */; };
-		CE6D62A71CAFD35000819EDB /* default.jpg in Resources */ = {isa = PBXBuildFile; fileRef = CE6D62A61CAFD35000819EDB /* default.jpg */; };
 		CE9EE0021CB16F440039AC3F /* ORMImageRequestModel.m in Sources */ = {isa = PBXBuildFile; fileRef = CE9EE0011CB16F440039AC3F /* ORMImageRequestModel.m */; };
 /* End PBXBuildFile section */
 
@@ -64,8 +64,9 @@
 		CE265F041CACAA6D0014D4B9 /* ORMImageCropperUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ORMImageCropperUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE265F081CACAA6D0014D4B9 /* ORMImageCropperUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ORMImageCropperUITests.m; sourceTree = "<group>"; };
 		CE265F0A1CACAA6D0014D4B9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CE265F171CACAB0F0014D4B9 /* ORMImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMImageCropper.h; sourceTree = "<group>"; };
-		CE265F181CACAB0F0014D4B9 /* ORMImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMImageCropper.m; sourceTree = "<group>"; };
+		CE265F171CACAB0F0014D4B9 /* ORMImageCropper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ORMImageCropper.h; path = ../ORMImageCropper.h; sourceTree = "<group>"; };
+		CE265F181CACAB0F0014D4B9 /* ORMImageCropper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ORMImageCropper.m; path = ../ORMImageCropper.m; sourceTree = "<group>"; };
+		CE26FE561CBED3B1007401DC /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		CE2C30DF1CB2639E00BDF512 /* ORMImageModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMImageModel.m; sourceTree = "<group>"; };
 		CE4BB21A1CB255870094553C /* ORMImageDataModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMImageDataModel.h; sourceTree = "<group>"; };
 		CE4BB21D1CB25CCB0094553C /* ORMImageModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMImageModel.h; sourceTree = "<group>"; };
@@ -73,7 +74,6 @@
 		CE6D62A11CAF985600819EDB /* ORMOverflowViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMOverflowViewController.h; sourceTree = "<group>"; };
 		CE6D62A21CAF985600819EDB /* ORMOverflowViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMOverflowViewController.m; sourceTree = "<group>"; };
 		CE6D62A31CAF985600819EDB /* ORMOverflowViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ORMOverflowViewController.xib; sourceTree = "<group>"; };
-		CE6D62A61CAFD35000819EDB /* default.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = default.jpg; sourceTree = "<group>"; };
 		CE9EE0001CB16F440039AC3F /* ORMImageRequestModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORMImageRequestModel.h; sourceTree = "<group>"; };
 		CE9EE0011CB16F440039AC3F /* ORMImageRequestModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORMImageRequestModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,9 +106,10 @@
 		CE1AFC5B1CAD1BC700FEC9F4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE265F171CACAB0F0014D4B9 /* ORMImageCropper.h */,
+				CE265F181CACAB0F0014D4B9 /* ORMImageCropper.m */,
 				CE26FE541CBED28E007401DC /* 下部选择框 */,
 				CE26FE531CBED275007401DC /* 网络查找瀑布流 */,
-				CE6D62A61CAFD35000819EDB /* default.jpg */,
 			);
 			name = ViewController;
 			path = View;
@@ -180,10 +181,9 @@
 		CE265F161CACAAED0014D4B9 /* ORMImageCropper */ = {
 			isa = PBXGroup;
 			children = (
-				CE265F171CACAB0F0014D4B9 /* ORMImageCropper.h */,
-				CE265F181CACAB0F0014D4B9 /* ORMImageCropper.m */,
-				CE6D629D1CAF980A00819EDB /* Model */,
 				CE1AFC5B1CAD1BC700FEC9F4 /* ViewController */,
+				CE6D629D1CAF980A00819EDB /* Model */,
+				CE26FE551CBED37A007401DC /* Resoure */,
 			);
 			path = ORMImageCropper;
 			sourceTree = "<group>";
@@ -242,6 +242,14 @@
 				CE1AFC5D1CAD1BC700FEC9F4 /* AlertViewController.m */,
 			);
 			name = "下部选择框";
+			sourceTree = "<group>";
+		};
+		CE26FE551CBED37A007401DC /* Resoure */ = {
+			isa = PBXGroup;
+			children = (
+				CE26FE561CBED3B1007401DC /* default.jpg */,
+			);
+			path = Resoure;
 			sourceTree = "<group>";
 		};
 		CE6D629D1CAF980A00819EDB /* Model */ = {
@@ -362,7 +370,7 @@
 				CE265EF01CACAA6D0014D4B9 /* Assets.xcassets in Resources */,
 				CE265EEE1CACAA6D0014D4B9 /* Main.storyboard in Resources */,
 				CE6D62A51CAF985600819EDB /* ORMOverflowViewController.xib in Resources */,
-				CE6D62A71CAFD35000819EDB /* default.jpg in Resources */,
+				CE26FE571CBED3B1007401DC /* default.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
