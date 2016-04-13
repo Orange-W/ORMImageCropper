@@ -77,16 +77,16 @@
     ORMImageModel *imageModel = self.dataModel.imageArray[indexPath.row];
     UIImageView *imageView = [[UIImageView alloc] init];
     CGSize size = [self radioSizeFromImageModel:imageModel];
-    [imageView setFrame:CGRectMake(0, 0, size.width, size.height)];
+    imageView.frame = CGRectMake(0, 0, size.width, size.height);
     imageView.backgroundColor = [UIColor grayColor];
     
     UIActivityIndicatorView *active = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
-    [active setCenter:imageView.center];
+    active.center = imageView.center;
     [active startAnimating];
     [imageView addSubview:active];
     
     
-    [cell setBackgroundView:imageView];
+    cell.backgroundView = imageView;
     cell.backgroundColor = [UIColor redColor];
 
     return cell;

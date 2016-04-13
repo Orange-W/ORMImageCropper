@@ -30,9 +30,9 @@
     NSString *param2 =  [NSString stringWithFormat:@"%@?%@",kImageRequestUrl,param];
     NSURL *url = [NSURL URLWithString:param2];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] init];
-    [request setURL:url];
+    request.URL = url;
 //    [request setHTTPMethod:@"GET"];
-    [request setTimeoutInterval:60];
+    request.timeoutInterval = 60;
     
 //    [request setHTTPBody:[param dataUsingEncoding:NSUTF8StringEncoding]];
     

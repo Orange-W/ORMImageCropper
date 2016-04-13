@@ -104,7 +104,7 @@
 
 #pragma mark imagePicker代理
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary<NSString *,id> *)info{
-    self.editImage = [info objectForKey:UIImagePickerControllerEditedImage];
+    self.editImage = info[UIImagePickerControllerEditedImage];
     NSLog(@"剪切成功%@",info);
     [picker dismissViewControllerAnimated:YES completion:nil];
      self.completeBlock(self.editImage);
