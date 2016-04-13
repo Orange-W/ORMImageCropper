@@ -108,7 +108,7 @@
     NSLog(@"剪切成功%@",info);
     [picker dismissViewControllerAnimated:YES completion:nil];
      self.completeBlock(self.editImage);
-    [self.actionSheet popoverPresentationController];
+    (self.actionSheet).popoverPresentationController;
 }
 
 @end
