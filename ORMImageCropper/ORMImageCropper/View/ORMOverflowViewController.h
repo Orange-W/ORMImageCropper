@@ -9,7 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface ORMOverflowViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UICollectionView *cooectView;
+@property (weak, nonatomic) IBOutlet UICollectionView *collectView;
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UIButton *cancelButton;
 
 @end

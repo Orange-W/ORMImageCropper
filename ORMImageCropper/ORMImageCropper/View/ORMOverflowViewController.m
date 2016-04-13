@@ -22,15 +22,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.collectView.backgroundColor = [UIColor colorWithRed:255/255.0   green:255/255.0 blue:230/255.0 alpha:1];
     // Do any additional setup after loading the view from its nib.
-    self.cooectView.delegate = self;
-    self.cooectView.dataSource = self;
+    self.collectView.delegate = self;
+    self.collectView.dataSource = self;
+    self.searchBar.delegate = self;
+    [self.cancelButton addTarget:self action:@selector(cancelBack) forControlEvents:UIControlEventTouchUpInside];
     
-    [self.cooectView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
-    ORMImageRequestModel *requestModel = [[ORMImageRequestModel alloc] init];
+    [self.collectView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    
     __weak ORMOverflowViewController *weakSelf = self;
-    [weakSelf.cooectView reloadData];
     self.operation = [NSBlockOperation blockOperationWithBlock:^{
         NSLog(@"执行第2次操作，线程：%@", [NSThread currentThread]);
     }];
@@ -47,38 +48,13 @@
                 NSLog(@"又执行了1个新的操作，线程：%@", [NSThread currentThread]);
                 dispatch_sync(dispatch_get_main_queue(), ^{
                     NSLog(@"线程%@跟新cell：<section:%ld,row:%ld>", [NSThread currentThread],section,row);
-                    [weakSelf.cooectView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:section]]];
-                    
+                    [weakSelf.collectView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:section]]];
                 });
-                
-                
             }];
-            
         }
     }];
     
-    [[NSBlockOperation blockOperationWithBlock:^(){
-        
-        NSLog(@"执行第1次操作，线程：%@", [NSThread currentThread]);
-        [requestModel requestWithQuery:@"无语" page:0 handleComplete:^(ORMImageDataModel *imageModel) {
-            weakSelf.dataModel = imageModel;
-            
-            
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [weakSelf.cooectView reloadData];
-                
-                
-                [self.operation start];
-                
-            });
-            
-        }];
-        
-    }] start];
-    
-    
-    [self.operation start];
-    
+     
     //NSLog(@"%@",requestModel.imageDataodel);
     
 }
@@ -88,6 +64,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark -
+#pragma mark collectView delegate
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -98,16 +76,14 @@
 
     ORMImageModel *imageModel = self.dataModel.imageArray[indexPath.row];
     UIImageView *imageView = [[UIImageView alloc] init];
-    [imageView setFrame:CGRectMake(0, 0, kImageDivWidth, imageModel.height*kImageDivWidth/imageModel.width)];
+    CGSize size = [self radioSizeFromImageModel:imageModel];
+    [imageView setFrame:CGRectMake(0, 0, size.width, size.height)];
     imageView.backgroundColor = [UIColor grayColor];
     
     UIActivityIndicatorView *active = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     [active setCenter:imageView.center];
     [active startAnimating];
     [imageView addSubview:active];
-    
-    
-    UIImage *requestImage = [ORMRequestImageModel requestImageWithUrl:imageModel.pic_url];
     
     
     [cell setBackgroundView:imageView];
@@ -125,26 +101,53 @@
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section{
     return self.dataModel.imageArray.count;
 }
-//
+
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     ORMImageModel *imageModel = self.dataModel.imageArray[indexPath.section*3 + indexPath.row];
     
-    return CGSizeMake(kImageDivWidth, imageModel.height*kImageDivWidth/imageModel.width);
+    ///定宽等比缩放
+    return [self radioSizeFromImageModel:imageModel];
 }
 
 - (CGFloat)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout minimumLineSpacingForSectionAtIndex:(NSInteger)section{
     return  10.0;
 }
 
-- (void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
-    NSLog(@"2333");
+#pragma mark -
+#pragma mark searchbar
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    NSString *searString = searchBar.text;
+    ORMImageRequestModel *requestModel = [[ORMImageRequestModel alloc] init];
+     __weak ORMOverflowViewController *weakSelf = self;
+    [[NSBlockOperation blockOperationWithBlock:^(){
+        
+        NSLog(@"执行第1次操作，线程：%@", [NSThread currentThread]);
+        [requestModel requestWithQuery:searString page:0 handleComplete:^(ORMImageDataModel *imageModel) {
+            weakSelf.dataModel = imageModel;
+            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [weakSelf.collectView reloadData];
+                [self.operation start];
+                
+            });
+            
+        }];
+        
+    }] start];
 }
 
-- (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event{
-    self
+#pragma mark 返回
+- (void)cancelBack{
+    NSLog(@"cancel");
+    [self  dismissViewControllerAnimated:YES completion:nil];
 }
 
+#pragma mark -
+#pragma mark 自定义函数
 
 
+- (CGSize)radioSizeFromImageModel:(ORMImageModel *)imageModel{
+   return CGSizeMake(kImageDivWidth, imageModel.height*kImageDivWidth/imageModel.width);
+}
 
 @end

@@ -106,12 +106,9 @@
 		CE1AFC5B1CAD1BC700FEC9F4 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				CE26FE541CBED28E007401DC /* 下部选择框 */,
+				CE26FE531CBED275007401DC /* 网络查找瀑布流 */,
 				CE6D62A61CAFD35000819EDB /* default.jpg */,
-				CE1AFC5C1CAD1BC700FEC9F4 /* AlertViewController.h */,
-				CE1AFC5D1CAD1BC700FEC9F4 /* AlertViewController.m */,
-				CE6D62A11CAF985600819EDB /* ORMOverflowViewController.h */,
-				CE6D62A21CAF985600819EDB /* ORMOverflowViewController.m */,
-				CE6D62A31CAF985600819EDB /* ORMOverflowViewController.xib */,
 			);
 			name = ViewController;
 			path = View;
@@ -191,17 +188,68 @@
 			path = ORMImageCropper;
 			sourceTree = "<group>";
 		};
-		CE6D629D1CAF980A00819EDB /* Model */ = {
+		CE26FE4F1CBED1EB007401DC /* 请求图片列表 */ = {
 			isa = PBXGroup;
 			children = (
 				CE9EE0001CB16F440039AC3F /* ORMImageRequestModel.h */,
 				CE9EE0011CB16F440039AC3F /* ORMImageRequestModel.m */,
-				CE4BB21A1CB255870094553C /* ORMImageDataModel.h */,
-				CE4BB2201CB25E280094553C /* ORMImageDataModel.m */,
-				CE4BB21D1CB25CCB0094553C /* ORMImageModel.h */,
-				CE2C30DF1CB2639E00BDF512 /* ORMImageModel.m */,
+			);
+			name = "请求图片列表";
+			sourceTree = "<group>";
+		};
+		CE26FE501CBED206007401DC /* 从 url请求图片 */ = {
+			isa = PBXGroup;
+			children = (
 				CE1D242A1CBBCFAB003565A4 /* ORMRequestImageModel.h */,
 				CE1D242B1CBBCFAB003565A4 /* ORMRequestImageModel.m */,
+			);
+			name = "从 url请求图片";
+			sourceTree = "<group>";
+		};
+		CE26FE511CBED21E007401DC /* 图片列表返回模型 */ = {
+			isa = PBXGroup;
+			children = (
+				CE4BB21A1CB255870094553C /* ORMImageDataModel.h */,
+				CE4BB2201CB25E280094553C /* ORMImageDataModel.m */,
+				CE26FE521CBED234007401DC /* 图片属性模型 */,
+			);
+			name = "图片列表返回模型";
+			sourceTree = "<group>";
+		};
+		CE26FE521CBED234007401DC /* 图片属性模型 */ = {
+			isa = PBXGroup;
+			children = (
+				CE4BB21D1CB25CCB0094553C /* ORMImageModel.h */,
+				CE2C30DF1CB2639E00BDF512 /* ORMImageModel.m */,
+			);
+			name = "图片属性模型";
+			sourceTree = "<group>";
+		};
+		CE26FE531CBED275007401DC /* 网络查找瀑布流 */ = {
+			isa = PBXGroup;
+			children = (
+				CE6D62A11CAF985600819EDB /* ORMOverflowViewController.h */,
+				CE6D62A21CAF985600819EDB /* ORMOverflowViewController.m */,
+				CE6D62A31CAF985600819EDB /* ORMOverflowViewController.xib */,
+			);
+			name = "网络查找瀑布流";
+			sourceTree = "<group>";
+		};
+		CE26FE541CBED28E007401DC /* 下部选择框 */ = {
+			isa = PBXGroup;
+			children = (
+				CE1AFC5C1CAD1BC700FEC9F4 /* AlertViewController.h */,
+				CE1AFC5D1CAD1BC700FEC9F4 /* AlertViewController.m */,
+			);
+			name = "下部选择框";
+			sourceTree = "<group>";
+		};
+		CE6D629D1CAF980A00819EDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CE26FE4F1CBED1EB007401DC /* 请求图片列表 */,
+				CE26FE501CBED206007401DC /* 从 url请求图片 */,
+				CE26FE511CBED21E007401DC /* 图片列表返回模型 */,
 			);
 			path = Model;
 			sourceTree = "<group>";
