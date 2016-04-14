@@ -13,7 +13,8 @@
 
 @interface ORMOverflowViewController ()<UICollectionViewDelegate,UICollectionViewDataSource,UISearchBarDelegate>
 @property (strong, nonatomic) ORMImageDataModel *dataModel;
-@property (strong, atomic) NSBlockOperation *operation;
+@property (strong, atomic) NSBlockOperation *queryOperation;
+@property (strong, atomic) NSBlockOperation *requestOperation;
 @end
 
 @implementation ORMOverflowViewController
@@ -32,29 +33,7 @@
     [self.collectView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
     __weak ORMOverflowViewController *weakSelf = self;
-    self.operation = [NSBlockOperation blockOperationWithBlock:^{
-        NSLog(@"执行第2次操作，线程：%@", [NSThread currentThread]);
-    }];
-    [self.dataModel.imageArray enumerateObjectsUsingBlock:^(ORMImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        if (obj.image == nil) {
-            [self.operation addExecutionBlock:^() {
-                NSLock *lock = [[NSLock alloc] init];
-                UIImage *image =[ORMRequestImageModel requestImageWithUrl:obj.pic_url];
-                [lock lock];
-                obj.image = image;
-                [lock unlock];
-                NSInteger section = idx/3;
-                NSInteger row = idx%3;
-                NSLog(@"又执行了1个新的操作，线程：%@", [NSThread currentThread]);
-                dispatch_sync(dispatch_get_main_queue(), ^{
-                    NSLog(@"线程%@跟新cell：<section:%ld,row:%ld>", [NSThread currentThread],section,row);
-                    [weakSelf.collectView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:section]]];
-                });
-            }];
-        }
-    }];
-    
-     
+
     //NSLog(@"%@",requestModel.imageDataodel);
     
 }
@@ -79,19 +58,22 @@
     CGSize size = [self radioSizeFromImageModel:imageModel];
     imageView.frame = CGRectMake(0, 0, size.width, size.height);
     imageView.backgroundColor = [UIColor grayColor];
+    imageView.image = imageModel.image;
     
     UIActivityIndicatorView *active = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0, 0, 10, 10)];
     active.center = imageView.center;
-    [active startAnimating];
+    
+    if (imageView.image==nil) {
+        [active startAnimating];
+    }else{
+        [active stopAnimating];
+    }
+    
     [imageView addSubview:active];
-    
-    
     cell.backgroundView = imageView;
     cell.backgroundColor = [UIColor redColor];
 
     return cell;
-    
-
 }
 
 -(NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView{
@@ -104,7 +86,6 @@
 
 - (CGSize)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath{
     ORMImageModel *imageModel = self.dataModel.imageArray[indexPath.section*3 + indexPath.row];
-    
     ///定宽等比缩放
     return [self radioSizeFromImageModel:imageModel];
 }
@@ -116,24 +97,17 @@
 #pragma mark -
 #pragma mark searchbar
 - (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    NSString *searString = searchBar.text;
-    ORMImageRequestModel *requestModel = [[ORMImageRequestModel alloc] init];
-     __weak ORMOverflowViewController *weakSelf = self;
-    [[NSBlockOperation blockOperationWithBlock:^(){
-        
-        NSLog(@"执行第1次操作，线程：%@", [NSThread currentThread]);
-        [requestModel requestWithQuery:searString page:0 handleComplete:^(ORMImageDataModel *imageModel) {
-            weakSelf.dataModel = imageModel;
-            
-            dispatch_sync(dispatch_get_main_queue(), ^{
-                [weakSelf.collectView reloadData];
-                [self.operation start];
-                
-            });
-            
-        }];
-        
-    }] start];
+    [searchBar resignFirstResponder];
+    if ([self.queryOperation isExecuting] || [self.requestOperation isExecuting]) {
+        [self.requestOperation cancel];
+        [self.queryOperation cancel];
+
+    }
+    //[self.operation cancel];
+    self.dataModel =nil;
+    NSString *searchString = searchBar.text;
+    [self queryStartWithQuery:searchString];
+    
 }
 
 #pragma mark 返回
@@ -148,6 +122,54 @@
 
 - (CGSize)radioSizeFromImageModel:(ORMImageModel *)imageModel{
    return CGSizeMake(kImageDivWidth, imageModel.height*kImageDivWidth/imageModel.width);
+}
+
+- (void)queryStartWithQuery:(NSString *)searchString{
+    ORMImageRequestModel *requestModel = [[ORMImageRequestModel alloc] init];
+    __weak ORMOverflowViewController *weakSelf = self;
+    self.queryOperation = [NSBlockOperation blockOperationWithBlock:^(){
+        
+        NSLog(@"执行第1次操作，线程：%@", [NSThread currentThread]);
+        [requestModel requestWithQuery:searchString page:0 handleComplete:^(ORMImageDataModel *imageModel) {
+            weakSelf.dataModel = imageModel;
+            
+            dispatch_sync(dispatch_get_main_queue(), ^{
+                [weakSelf.collectView reloadData];
+            });
+            [self requestOperationStart];
+        }];
+        
+    }];
+    
+    [self.queryOperation start];
+}
+
+- (void)requestOperationStart{
+    self.requestOperation = [NSBlockOperation blockOperationWithBlock:^{
+        
+    }];
+    __weak ORMOverflowViewController * weakSelf = self;
+    [self.dataModel.imageArray enumerateObjectsUsingBlock:^(ORMImageModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        if (obj.image == nil) {
+            [weakSelf.requestOperation addExecutionBlock:^() {
+                NSLock *lock = [[NSLock alloc] init];
+                UIImage *image =[ORMRequestImageModel requestImageWithUrl:obj.pic_url];
+                [lock lock];
+                NSLog(@"%@",image);
+                obj.image = image;
+                [lock unlock];
+                NSInteger section = idx/3;
+                NSInteger row = idx%3;
+                NSLog(@"新的操作，线程：%@", [NSThread currentThread]);
+                dispatch_sync(dispatch_get_main_queue(), ^{
+                    NSLog(@"线程%@跟新cell：<section:%ld,row:%ld>\n------", [NSThread currentThread],section,row);
+                    
+                    [weakSelf.collectView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]]];
+                });
+            }];
+        }
+    }];
+    [self.requestOperation start];
 }
 
 @end

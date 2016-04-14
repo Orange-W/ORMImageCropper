@@ -93,9 +93,9 @@
             <variation key="default">
                 <mask key="constraints">
                     <exclude reference="VrG-zL-Ypp"/>
-                    <exclude reference="fY4-sE-Mh3"/>
                     <exclude reference="XPg-Pl-oru"/>
                     <exclude reference="a4j-ml-Gh7"/>
+                    <exclude reference="fY4-sE-Mh3"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="338.5" y="239.5"/>
