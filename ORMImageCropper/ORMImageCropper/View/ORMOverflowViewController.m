@@ -71,7 +71,6 @@
     
     [imageView addSubview:active];
     cell.backgroundView = imageView;
-    cell.backgroundColor = [UIColor redColor];
 
     return cell;
 }
@@ -155,15 +154,15 @@
                 NSLock *lock = [[NSLock alloc] init];
                 UIImage *image =[ORMRequestImageModel requestImageWithUrl:obj.pic_url];
                 [lock lock];
-                NSLog(@"%@",image);
+                //NSLog(@"%@",image);
                 obj.image = image;
                 [lock unlock];
                 NSInteger section = idx/3;
                 NSInteger row = idx%3;
-                NSLog(@"新的操作，线程：%@", [NSThread currentThread]);
+                //NSLog(@"新的操作，线程：%@", [NSThread currentThread]);
                 dispatch_sync(dispatch_get_main_queue(), ^{
-                    NSLog(@"线程%@跟新cell：<section:%ld,row:%ld>\n------", [NSThread currentThread],section,row);
-                    
+                    NSLog(@"%ld-%@\ncell：<section:%ld,row:%ld>\n------",idx,obj.pic_url,section,row);
+                    //NSLog(@"url:%@",obj.pic_url);
                     [weakSelf.collectView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForRow:idx inSection:0]]];
                 });
             }];

@@ -22,7 +22,7 @@
         imgModel.title = tmpDic[@"title"];
         imgModel.size = tmpDic[@"size"];
         imgModel.cacheIndex = [tmpDic[@"cacheIndex"] integerValue];
-        imgModel.pic_url = tmpDic[@"pic_url"];
+        imgModel.pic_url = tmpDic[@"thumbUrl"];
         imgModel.width = [tmpDic[@"width"] integerValue];
         imgModel.height = [tmpDic[@"height"] integerValue];
         imgModel.ratio = 1.0*imgModel.width/imgModel.height;
